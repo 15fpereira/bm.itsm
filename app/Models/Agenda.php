@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Agenda extends Model
 {
+    protected $fillable = [
+        // chave estrageira padrão: _id
+        // O Eloquent tentará encontrar uma classe "Chamado", modelo que tenha um id que corresponda à chamado_id coluna do Commentmodelo.
+        // status terá três valores agendado, em andamento e concluido.
+        'observacao', 'descrição', 'status', 'chamado_id'
+
+    ];
     use HasFactory;
     /**
      * Get the colaborador that owns the Colaborador
