@@ -11,7 +11,7 @@ class Agenda extends Model
         // chave estrageira padrão: _id
         // O Eloquent tentará encontrar uma classe "Chamado", modelo que tenha um id que corresponda à chamado_id coluna do Commentmodelo.
         // status terá três valores agendado, em andamento e concluido.
-        'observacao', 'descrição', 'status', 'chamado_id'
+        'observacao', 'descricao', 'status', 'chamado_id'
 
     ];
     use HasFactory;

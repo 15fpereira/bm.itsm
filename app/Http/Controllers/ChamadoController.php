@@ -36,6 +36,7 @@ class ChamadoController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**
@@ -47,6 +48,7 @@ class ChamadoController extends Controller
     public function show(Chamado $chamado)
     {
         //
+        return view('chamado.show',['chamado' => $chamado]);
     }
 
     /**
@@ -70,6 +72,15 @@ class ChamadoController extends Controller
     public function update(Request $request, Chamado $chamado)
     {
         //
+        dd($request->all());
+       // $contato = Contato::find($id);
+
+       // $contato->name = $request->name;
+      //  $contato->telefone = $request->telefone;
+      //  $contato->email = $request->email;
+      //  $contato->save();
+     //   Session::flash('flash_message', 'Contatos Atualizado com sucesso!');
+     //   return redirect()->route('contatos.index');
     }
 
     /**

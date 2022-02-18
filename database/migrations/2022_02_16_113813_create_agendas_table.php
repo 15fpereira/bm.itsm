@@ -16,7 +16,7 @@ class CreateAgendasTable extends Migration
         Schema::create('agendas', function (Blueprint $table) {
             $table->id();
             $table->string('observacao');
-            $table->string('descricao');
+            $table->string('descricao')->nullable();
             $table->string('status');
             $table->unsignedBigInteger('chamado_id');
             $table->foreign('chamado_id')->references('id')->on('chamados')

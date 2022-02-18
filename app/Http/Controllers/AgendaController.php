@@ -22,9 +22,10 @@ class AgendaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
         //
+        dd($id);
     }
 
     /**
@@ -36,6 +37,10 @@ class AgendaController extends Controller
     public function store(Request $request)
     {
         //
+       //dd($request->all());
+        Agenda::create($request->all());
+        // Session::flash('flash_message', 'Contato criado com sucesso! '); //messagem de sucesso!
+        return redirect()->route('chamados.show',$request->chamado_id);
     }
 
     /**
