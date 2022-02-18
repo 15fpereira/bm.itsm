@@ -31,6 +31,7 @@
                                 </div>
 
                         <button type="submit" class="btn btn-secondary btn-sm mt-4">Confirmar</button>
+                        <button type="submit" class="btn btn-secondary btn-sm mt-4">Sair</button> <!-- Aqui implementar a função voltar, ou retear para um determinado lugar -->
 
                     </form>
                     <!-- End Contact Form -->

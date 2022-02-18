@@ -6,15 +6,23 @@
 <div class="container">
     <div class="row">
       <div class="col">col Nº chamado: {{$chamado->id}}</div>
-      <div class="col">col</div>
+      <div class="col">
+
+        <ul>
+            <li>Responsável: Francisco Dias</li>
+            <li>Situação: {{$chamado->status}}</li>
+        </ul>
+
+
+        </div>
       <div class="col">col</div>
       <div class="col">col</div>
     </div>
     <div class="row">
-      <div class="col-8">col-8$ {{$chamado->descricao}}
+      <div class="col">col-8$ {{$chamado->descricao}}
         @include('chamado.edit')
     </div>
-      <div class="col-4">
+      <div class="col">
         <h5>Agenda do chamado:</h5>
 
 
