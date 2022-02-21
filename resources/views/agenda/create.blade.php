@@ -6,7 +6,7 @@
 
 
          <!-- Button trigger modal -->
-        <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModal1">criar</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModal1">Criar</button>
 
 
 <!-- Modal -->
@@ -25,26 +25,24 @@
                     <div class="form-group">
                         <label class="col-form-label col-form-label-lg" for="inputLarge"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Entra com Observação:</font></font></label>
                         <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" name="observacao" id="observacao">
-                        <input type="hidden" name="descricao" id="descricao" value="Teste de observação">
-                    </div>
 
-                    <input type="hidden" name="descricao" id="descricao" value="Teste de observação">
+                    </div>
 
                     <fieldset class="form-group">
                         <legend class="mt-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Status da Agenda:</font></font></legend>
-                        <div class="form-check">
+                        <div class="form-check form-check-inline">
                             <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="status" id="optionsRadios1" value="Aberto" checked=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                            Aberto:
+                            <input type="radio" class="form-check-input" name="status" id="optionsRadios1" value="Agendado" checked=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                            Agendado:
                             </font></font></label>
                         </div>
-                        <div class="form-check">
+                        <div class="form-check form-check-inline">
                             <label class="form-check-label">
                             <input type="radio" class="form-check-input" name="status" id="optionsRadios2" value="Em andamento"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                             Em andamento:
                             </font></font></label>
                         </div>
-                        <div class="form-check disabled">
+                        <div class="form-check form-check-inline disabled">
                             <label class="form-check-label">
                             <input type="radio" class="form-check-input" name="status" id="optionsRadios3" value="" disabled="Concluido"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                             Concluido:

@@ -4,8 +4,9 @@
 @endsection
 @section('content')
 <div class="container">
-    <div class="row">
-      <div class="col">col Nº chamado: {{$chamado->id}}</div>
+
+    <div class="row bg-outline-secondary">
+      <div class="col">Nº chamado: {{$chamado->id}}</div>
       <div class="col">
 
         <ul>
@@ -18,8 +19,8 @@
       <div class="col">col</div>
       <div class="col">col</div>
     </div>
-    <div class="row">
-      <div class="col">col-8$ {{$chamado->descricao}}
+    <div class="row bg-dark">
+      <div class="col"><h5>Nº chamado: {{$chamado->id}}</h5>
         @include('chamado.edit')
     </div>
       <div class="col">
@@ -39,37 +40,16 @@
               <tbody>
 
                 @foreach ($chamado::find($chamado->id)->agendas as $agenda)
-                    <tr class="table-dark">
-
-                    <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$agenda->created_at}}</font></font></td>
-                    <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$agenda->updated_at}}</font></font></td>
-                    <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font>{{$agenda->status}}</font></td>
-                    </tr>
+                    @include('agenda.edit')
                 @endforeach
               </tbody>
             </table>
 
-
-
-
         @include('agenda.create')
-        <a class="btn btn-outline-light" href="{{route('agendas.create',$chamado->id)}}"><font style="button"><font style="vertical-align: inherit;">Nova Agenda</font></font></a>
+
       </div>
     </div>
   </div>
 
-  <script>
-    $(document).ready(function(){
-        //Add a minus icon to the collapse element that is open by default
-        $('.collapse.show').each(function(){
-            $(this).parent().find(".fa").removeClass("fa-plus").addClass("fa-minus");
-        });
-        //Toggle plus/minus icon on show/hide of collapse element
-        $('.collapse').on('shown.bs.collapse', function(){
-            $(this).parent().find(".fa").removeClass("fa-plus").addClass("fa-minus");
-        }).on('hidden.bs.collapse', function(){
-            $(this).parent().find(".fa").removeClass("fa-minus").addClass("fa-plus");
-        });
-    });
-</script>
+
 @endsection

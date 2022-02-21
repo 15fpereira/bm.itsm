@@ -75,6 +75,13 @@ class AgendaController extends Controller
     public function update(Request $request, Agenda $agenda)
     {
         //
+        //dd($request->all());
+        //dd($agenda->observacao);
+        $agenda->observacao = $request->observacao;
+        $agenda->descricao = $request->descricao;
+        $agenda->status = $request->status;
+        $agenda->save();
+        return redirect()->route('chamados.show',[$agenda->chamado_id]);
     }
 
     /**

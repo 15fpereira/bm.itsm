@@ -72,15 +72,19 @@ class ChamadoController extends Controller
     public function update(Request $request, Chamado $chamado)
     {
         //
-        dd($request->all());
+       // dd($request->all());
+
        // $contato = Contato::find($id);
+        $chamado->descricao = $request->descricao;
+        $chamado->status = $request->status;
+        $chamado->save();
 
        // $contato->name = $request->name;
       //  $contato->telefone = $request->telefone;
       //  $contato->email = $request->email;
       //  $contato->save();
      //   Session::flash('flash_message', 'Contatos Atualizado com sucesso!');
-     //   return redirect()->route('contatos.index');
+        return redirect()->route('chamados.show',[$chamado]);
     }
 
     /**
