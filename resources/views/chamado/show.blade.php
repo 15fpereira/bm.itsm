@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.apps')
 @section('title')
     Chamado: {{$chamado->id}}
 @endsection
@@ -6,7 +6,13 @@
 <div class="container">
 
     <div class="row bg-outline-secondary">
-      <div class="col">Nº chamado: {{$chamado->id}}</div>
+      <div class="col">
+        <ul>
+            <li>Nº chamado: {{$chamado->id}}</li>
+            <li>Quantidade de agendamento: {{count($chamado->agendas)}}</li>
+        </ul>
+
+        </div>
       <div class="col">
 
         <ul>

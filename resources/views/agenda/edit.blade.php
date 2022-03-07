@@ -1,10 +1,11 @@
 <tr class="table-dark">
+
     <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="btn btn-link" href="#">{{$agenda->created_at}}</a></font></font></td>
     <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="btn btn-link" href="#">{{$agenda->updated_at}}</a></font></font></td>
-    <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exModal2">{{$agenda->status}}</button></font></font></td>
+    <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exModal{{$loop->iteration}}">{{$agenda->status}}</button></font></font></td>
 </tr>
 <!-- Start Modal -->
-<div class="modal fade" id="exModal2" tabindex="-1" aria-labelledby="exModalLabel" aria-hidden="true">
+<div class="modal fade" id="exModal{{$loop->iteration}}" tabindex="-1" aria-labelledby="exModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
