@@ -26,4 +26,11 @@ class Chamado extends Model
         //return $this->belongsTo(Agenda::class);
 
     }
+
+    public function users()
+    {
+        //return $this->hasMany(User::class);
+        return $this->belongsTo(User::class);
+
+    }
 }

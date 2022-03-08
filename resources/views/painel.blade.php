@@ -14,7 +14,7 @@
         </h1>
 
 
-        <p class="lead text-muted"> {{__('Hello!' )}} Seja bem vido ao {{__('Dashboard')}} do sistema: Bm.itsm</p>
+        <p class="lead text-muted"> {{__('Hello!' )}} {{Auth::user()->name}} Seja bem vido ao {{__('Dashboard')}} do sistema: Bm.itsm</p>
 
         <p>
 
