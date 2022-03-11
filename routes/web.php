@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChamadoController;
 Use App\Http\Controllers\AgendaController;
+use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ServicoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,11 @@ Route::get('/', function () {
 Route::resources([
     'chamados' => ChamadoController::class,
     'agendas' => AgendaController::class,
+]);
+
+Route::resources([
+    'portfolios' => PortfolioController::class,
+    'servicos' => ServicoController::class,
 ]);
 
 Route::get('/dashboard', function () {

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 class ChamadoController extends Controller
 {
+    // Construtor para torna a classe: ChamadoController acessivel internamente,
+    // ou seja, quando estiver autenticado.
     public function __construct()
     {
         $this->middleware('auth');
@@ -40,6 +42,9 @@ class ChamadoController extends Controller
     public function store(Request $request)
     {
         //
+       // dd($request->all());
+        Chamado::create($request->all());
+        return redirect()->route('painel');
 
     }
 

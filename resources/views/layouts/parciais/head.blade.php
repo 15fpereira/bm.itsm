@@ -9,6 +9,7 @@
 <title>@yield('title')</title>
 
 <!-- Bootstrap core CSS -->
+<script src="https://kit.fontawesome.com/a177b4911d.js" crossorigin="anonymous"></script>
 
 <!-- Fonts -->
 
