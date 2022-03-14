@@ -25,6 +25,7 @@
                         <i class="fa fa-envelope-o fa-x5"></i>
                         <p class="card-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$portfolio->objetivo}}&nbsp;{{$portfolio->descricao}}</font></font></p>
                         <a href="{{route('servicos.create')}}" class="card-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Novo Serviço </font></font></a>
+                        @include('servico.create')
                         <a href="{{route('portfolios.show',$portfolio)}}" class="card-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Serviços</font></font></a>
                         </div>
                     </div>

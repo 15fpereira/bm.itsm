@@ -29,6 +29,7 @@ class PortfolioController extends Controller
     public function create()
     {
         //
+        return view('servico.create');
     }
 
     /**
