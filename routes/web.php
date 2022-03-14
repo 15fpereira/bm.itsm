@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChamadoController;
 Use App\Http\Controllers\AgendaController;
+use App\Http\Controllers\AuthChamadoController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServicoController;
 
@@ -20,6 +21,10 @@ use App\Http\Controllers\ServicoController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//Route::get('/meuschamados', [UserController::class, 'index']);
+Route::get('/meuschamados', [AuthChamadoController::class, 'index']);
 
 
 Route::resources([

@@ -6,7 +6,7 @@
 
 
          <!-- Button trigger modal -->
-        <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModal1">Criar</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModal1"><i class="fa fa-plus"></i>&nbsp; Criar</button>
 
 
 <!-- Modal -->
@@ -56,7 +56,7 @@
                    <!-- Form <input type="hidden" name="_method" value="DELETE"> -->
 
                     <input type="hidden" name="chamado_id" value="{{$chamado->id}}">
-                    <button type="submit" class="btn btn-primary">Criar</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Criar</button>
                 </form>
                 <!-- End Form -->
             </div>

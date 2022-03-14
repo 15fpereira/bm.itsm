@@ -1,7 +1,8 @@
 <footer class="text-muted">
 
     <div class="container">
-        <div class="row">
+
+        <div class="row mt-4">
             <div class="col-xs-6 col-md-4">
                 <p class="float-right">
 
@@ -50,8 +51,15 @@
         </div>
 
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="col-md-8"><h3>Logo</h3></div>
-            <div class="col-md-4">Icon Icon Icon</div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-4">
+            <div class="col-md-8">&nbsp;  <i class="fa-solid fa-laptop-code"></i>&nbsp; Todos os direito reservados</div>
+            <div class="col-md-4">
+               Contatos do desenvolvedor: <i class="fa-brands fa-facebook"></i>&nbsp; <i class="fa-brands fa-whatsapp"></i>&nbsp; <i class="fa-brands fa-instagram"></i>&nbsp; <i class="fa-brands fa-linkedin"></i>
+            </div>
     </nav>
+        <div class="text-center p-3 bg-dark">
+            © 2022 Copyright:
+            <a class="btn btn-link" href="https://bootstrap.com/">Bootstrap.com</a>
+            <!-- text-white ->>
+        </div>
 </footer>

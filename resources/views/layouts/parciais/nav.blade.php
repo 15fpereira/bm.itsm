@@ -9,7 +9,7 @@
             <ul class="navbar-nav me-auto">
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name}}</a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-circle-user"></i>&nbsp; {{ Auth::user()->name}}</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Perfil</a>
                         <a class="dropdown-item" href="#">Listar</a>
@@ -29,7 +29,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ route('painel') }}">Painel
+                    <a class="nav-link active" href="{{ route('painel') }}"><i class="fa-solid fa-indent"></i>&nbsp; Painel
                         <span class="visually-hidden">(current)</span>
                     </a>
                 </li>

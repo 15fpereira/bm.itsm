@@ -22,7 +22,7 @@
         <div class="col-lg-4 col-md-8 col-8">
             <div class="card shadow">
                 <div class="card-title text-center border-bottom">
-                    <h5 class="p-3">{{__('Log in')}}</h5>
+                    <h5 class="p-3"><i class="fa-solid fa-right-to-bracket"></i>&nbsp; {{__('Log in')}}</h5>
                 </div>
                 <div class="card-body">
 
@@ -36,12 +36,14 @@
                             @csrf
 
                             <div class="form-group">
-                                <label for="email" class="form-label mt-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Endereço de e-mail</font></font></label>
+                                <i class="fa fa-envelope"></i>
+                                <label for="email" class="form-label mt-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><i class="fa-solid fa-envelopes"></i>&nbsp; Endereço de e-mail</font></font></label>
                                 <input type="email" class="form-control" id="email" name="email" :value="old('email')" aria-describedby="emailHelp" placeholder="Digite o e-mail" required autofocus>
                                 <small id="emailHelp" class="form-text text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nunca compartilharemos seu e-mail com mais ninguém.</font></font></small>
                             </div>
 
                             <div class="form-group">
+                                <i class="fa fa-unlock"></i>&nbsp;
                                 <label for="password" class="form-label mt-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Senha</font></font></label>
                                 <input type="password" class="form-control" id="password" name="password" placeholder="Senha" required autocomplete="current-password">
                             </div>
@@ -60,7 +62,7 @@
                             </div>
                             <div class="d-grid mt-4">
                                 <x-button class="btn btn-outline-secondary">
-                                    {{ __('Log in') }}
+                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>&nbsp; {{ __('Log in') }}
                                 </x-button>
                             </div>
                         </form>

@@ -21,6 +21,8 @@ class ChamadoController extends Controller
     public function index()
     {
         //
+        $chamados = Chamado::all();
+        return view('chamado.index', compact('chamados'));
     }
 
     /**

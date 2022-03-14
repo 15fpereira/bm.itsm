@@ -28,8 +28,9 @@
                 </font></font></label>
             </div>
 
-    <button type="submit" class="btn btn-secondary btn-sm mt-4">Confirmar</button>
-    <button type="submit" class="btn btn-secondary btn-sm mt-4">Sair</button> <!-- Aqui implementar a função voltar, ou retear para um determinado lugar -->
+    <button type="submit" class="btn btn-secondary btn-sm mt-4"><i class="fa fa-check"></i>&nbsp; Confirmar</button>
+    <button type="link" class="btn btn-secondary btn-sm mt-4" onClick="history.go(-1)"><i class="fa fa-level-down fa-rotate-90"></i>&nbsp; Sair</button> <!-- Aqui implementar a função voltar, ou retear para um determinado lugar -->
+    <input type="button" class="btn btn-secondary btn-sm mt-4" value="Voltar" onClick="history.go(-1)">
 
 </form>
 <!-- End Contact Form -->
