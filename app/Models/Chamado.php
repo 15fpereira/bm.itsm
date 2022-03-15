@@ -11,7 +11,7 @@ class Chamado extends Model
         // chave estrageira padrão: _id
         // O Eloquent tentará encontrar um "Departamento" modelo que tenha um idque corresponda à post_idcoluna do Commentmodelo.
         // cargo_at é o cargo atual do colaborador
-        'descricao', 'status', 'user_id'
+        'descricao', 'status', 'user_id', 'servico_id'
     ];
     use HasFactory;
           /**
@@ -31,6 +31,12 @@ class Chamado extends Model
     {
         //return $this->hasMany(User::class);
         return $this->belongsTo(User::class);
+
+    }
+    public function servicos()
+    {
+        //return $this->hasMany(User::class);
+        return $this->belongsTo(Servico::class);
 
     }
 }

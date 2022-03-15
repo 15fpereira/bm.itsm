@@ -20,4 +20,9 @@ class Servico extends Model
     {
         return $this->belongsTo(Portfolio::class);
     }
+    public function chamados()
+    {
+        //return $this->belongsTo(Chamado::class);
+        return $this->hasMany(Chamado::class);
+    }
 }

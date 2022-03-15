@@ -21,6 +21,10 @@ class CreateChamadosTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->unsignedBigInteger('servico_id');
+            $table->foreign('servico_id')->references('id')->on('servicos')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
