@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <div class="container">
-    <div class="row bg-dark mt-2">
+    <div class="row bg-dark mt-4">
         <h4><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
             Detalhe
              </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">do chamado</font></font></small>
@@ -36,7 +36,10 @@
         </ul>
 
         </div>
-      <div class="col">Serviço:</div>
+      <div class="col">Serviço:
+    </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ App\Models\Servico::find($chamado->servico_id)->nome }}</font></font></small>
+
+      </div>
       <div class="col">col</div>
     </div>
     <div class="row bg-dark mt-2">
