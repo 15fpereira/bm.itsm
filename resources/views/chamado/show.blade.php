@@ -35,7 +35,6 @@
             </li>
         </ul>
 
-
         </div>
       <div class="col">Serviço:</div>
       <div class="col">col</div>

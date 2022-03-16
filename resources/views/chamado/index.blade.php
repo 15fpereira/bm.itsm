@@ -34,7 +34,7 @@
                     <th scope="row"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado->id}}</font></font></th>
                     <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{App\Models\User::find($chamado->user_id)->name}}</font></font></td>
                     <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado->status}}</font></font></td>
-                    <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado}}</font></font></td>
+                    <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{App\Models\Servico::find($chamado->servico_id)->nome}}</font></font></td>
                     <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Conteúdo da coluna</font></font></td>
                     <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a href="{{route('chamados.show',$chamado)}}"><i class="fa fa-level-up" aria-hidden="true"></i></a></font></font></td>
                 </tr>

@@ -18,13 +18,13 @@
             <!-- card -->
             @foreach ($portfolios as $portfolio)
             <div class="col-xs-4 col-md-4 mt-4">
-                <div class="card text-center">
+                <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$portfolio->tipo}}</font></font></h4>
-                        <h6 class="card-subtitle mb-2 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$portfolio->tipo}}</font></font></h6>
-                        <i class="fa fa-envelope-o fa-x5"></i>
-                        <p class="card-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$portfolio->objetivo}}&nbsp;{{$portfolio->descricao}}</font></font></p>
-                        <a href="{{route('servicos.create')}}" class="card-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Novo Serviço </font></font></a>
+                        <h4 class="card-title text-center"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$portfolio->tipo}}</font></font></h4>
+                        <h6 class="card-subtitle mb-2 text-center"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$portfolio->tipo}}</font></font></h6>
+                        <div class="text-center"> <i class="fa fa-envelope-o fa-x5"></i></div>
+                        <p class="card-text text-center"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$portfolio->objetivo}}&nbsp;{{$portfolio->descricao}}</font></font></p>
+                      <!--  <a href="{{route('servicos.create')}}" class="card-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Novo Serviço </font></font></a> -->
                         @include('servico.create')
                         <a href="{{route('portfolios.show',$portfolio)}}" class="card-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Serviços</font></font></a>
                         </div>

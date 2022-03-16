@@ -39,6 +39,9 @@ class ServicoController extends Controller
     public function store(Request $request)
     {
         //
+        //dd($request->all());
+        Servico::create($request->all());
+        return redirect()->route('portfolios.show',$request->portfolio_id);
     }
 
     /**
