@@ -19,6 +19,10 @@
             <li class="list-group-item">Quantidade de agendamento:
             </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{count($chamado->agendas)}}</font></font></small>
             </li>
+            <li class="list-group-item">Situação:
+            </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado->status}}</font></font></small>
+
+            </li>
         </ul>
 
         </div>
@@ -36,11 +40,20 @@
         </ul>
 
         </div>
-      <div class="col">Serviço:
-    </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ App\Models\Servico::find($chamado->servico_id)->nome }}</font></font></small>
+      <div class="col">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Serviço:
+                </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ App\Models\Servico::find($chamado->servico_id)->nome }}</font></font></small>
+
+            </li>
+            <li class="list-group-item">Situação:
+                </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado->status}}</font></font></small>
+
+            </li>
+        </ul>
 
       </div>
-      <div class="col">col</div>
+
     </div>
     <div class="row bg-dark mt-2">
       <div class="col mt-2">

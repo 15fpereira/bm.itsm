@@ -21,7 +21,7 @@
                   <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Responsável</font></font></th>
                   <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Status</font></font></th>
                   <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Serviço</font></font></th>
-                  <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font></font></th>
+                  <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dt de criação</font></font></th>
                   <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">abrir</font></font></th>
 
                 </tr>
@@ -31,10 +31,10 @@
                 @foreach ($chamados as $chamado)
                 <tr class="table-active">
                     <th scope="row"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado->id}}</font></font></th>
-                    <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font></font></td>
+                    <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{App\Models\User::find($chamado->user_id)->name}}</font></font></td>
                     <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado->status}}</font></font></td>
                     <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado->descricao}}</font></font></td>
-                    <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Conteúdo da coluna</font></font></td>
+                    <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado->created_at}}</font></font></td>
                     <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a href="{{route('chamados.show',$chamado)}}"><i class="fa fa-level-up" aria-hidden="true"></i></a></font></font></td>
                 </tr>
                 @endforeach
