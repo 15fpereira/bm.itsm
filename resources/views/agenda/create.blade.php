@@ -6,7 +6,7 @@
 
 
          <!-- Button trigger modal -->
-        <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModal1"><i class="fa fa-plus"></i>&nbsp; Criar</button>
+        <button type="button" @if($chamado->status == "Concluido") class="btn btn-secondary disabled btn-sm" @endif @if($chamado->status != "Concluido") class="btn btn-secondary btn-sm" @endif data-toggle="modal" data-target="#exampleModal1"><i class="fa fa-plus"></i>&nbsp; Criar</button>
 
 
 <!-- Modal -->

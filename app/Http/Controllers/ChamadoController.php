@@ -70,7 +70,7 @@ class ChamadoController extends Controller
      */
     public function edit(Chamado $chamado)
     {
-        //
+        // Utilizando modal
     }
 
     /**
@@ -86,6 +86,7 @@ class ChamadoController extends Controller
        // dd($request->all());
 
        // $contato = Contato::find($id);
+       //dd($chamado);
         $chamado->descricao = $request->descricao;
         $chamado->status = $request->status;
         $chamado->save();
@@ -95,7 +96,18 @@ class ChamadoController extends Controller
       //  $contato->email = $request->email;
       //  $contato->save();
      //   Session::flash('flash_message', 'Contatos Atualizado com sucesso!');
-        return redirect()->route('chamados.show',[$chamado]);
+        foreach($chamado->servicos() as $chmd)
+        {
+            dd($chmd);
+        };
+        if($chamado->status == "Concluido" )
+        {
+            return redirect()->route('chamados.index');
+        }else
+        {
+            return redirect()->route('chamados.show',[$chamado]);
+        }
+
     }
 
     /**

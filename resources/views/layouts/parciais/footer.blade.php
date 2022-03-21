@@ -49,7 +49,6 @@
                 </p>
             </div>
         </div>
-
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-4">
             <div class="col-md-8">&nbsp;  <i class="fa-solid fa-laptop-code"></i>&nbsp; Todos os direito reservados</div>
@@ -60,6 +59,6 @@
         <div class="text-center p-3 bg-dark">
             © 2022 Copyright:
             <a class="btn btn-link" href="https://bootstrap.com/">Bootstrap.com</a>
-            <!-- text-white ->>
+            <!-- text-white -->
         </div>
 </footer>

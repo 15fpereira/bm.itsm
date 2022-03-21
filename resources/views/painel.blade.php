@@ -24,7 +24,48 @@
 
             </p>
         </div>
+        <div class="row mt-4">
+            <h4><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                Painel de controle
+                </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> site.</font></font></small>
+            </h4>
         </div>
+        <div class="row mt-4">
+            <div class="col-xs-6 col-md-4">
+                <div class="card w-75 text-center fa-4x">
+                    <div class="card-body">
+                       <i class="fa fa-cogs"></i>
+                      <h4 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Configurações</font></font></h4>
+                      <h6 class="card-subtitle mb-2 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Legenda do cartão</font></font></h6>
+                    </div>
+                  </div>
+
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <div class="card w-75 text-center">
+                    <div class="card-body">
+                        <i class="fa fa-users fa-4x"></i>
+                      <h4 class="card-title md-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Usuários</font></font></h4>
+                      <h6 class="card-subtitle mb-2 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gestão de usuários</font></font></h6>
+
+                   </div>
+                  </div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <div class="card w-75 text-center" style="width: 18rem;">
+                    <div class="card-body">
+                    <i class="fa fa-server fa-4x"></i>
+                      <h4 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Título do cartão</font></font></h4>
+                      <h6 class="card-subtitle mb-2 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Legenda do cartão</font></font></h6>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
 
 </section>
 @endsection

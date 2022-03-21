@@ -2,7 +2,7 @@
 
     <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="btn btn-link" href="#">{{$agenda->created_at}}</a></font></font></td>
     <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="btn btn-link" href="#">{{$agenda->updated_at}}</a></font></font></td>
-    <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exModal{{$loop->iteration}}">{{$agenda->status}}</button></font></font></td>
+    <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><button type="button" @if($chamado->status == "Concluido") class="btn btn-secondary disabled btn-sm" @endif @if($chamado->status != "Concluido") class="btn btn-secondary btn-sm" @endif data-toggle="modal" data-target="#exModal{{$loop->iteration}}">{{$agenda->status}}</button></font></font></td>
 </tr>
 <!-- Start Modal -->
 <div class="modal fade" id="exModal{{$loop->iteration}}" tabindex="-1" aria-labelledby="exModalLabel" aria-hidden="true">
@@ -55,7 +55,7 @@
                 </div>
                 <div class="form-check form-check-inline disabled">
                     <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="status" id="optionsRadios3" value="" disabled="Concluido"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                    <input type="radio" class="form-check-input" name="status" id="optionsRadios3" value="Concluido" @if($agenda->status == "Concluido") checked="" @endif><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                     Concluido:
                     </font></font></label>
                 </div>
