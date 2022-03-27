@@ -17,10 +17,10 @@ use App\Http\Controllers\ServicoController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//roteamento do welcome interno e acessivel somente com autenticação.
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware(['auth'])->name('/');
 
 
 //Route::get('/meuschamados', [UserController::class, 'index']);
@@ -40,6 +40,7 @@ Route::resources([
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+//roteamento do painel interno e acessivel somente com autenticação.
 Route::get('/painel', function () {
     return view('painel');
 })->middleware(['auth'])->name('painel');

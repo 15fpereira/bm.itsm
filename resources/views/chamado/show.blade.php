@@ -3,6 +3,7 @@
     Chamado: {{$chamado->id}}
 @endsection
 @section('content')
+<!-- Laço de repetição para pegar o ultimos loop do relacionamento caso aja mais de um -->
 @foreach ($chamado::find($chamado->id)->agendas as $a)
 
 @endforeach
@@ -12,7 +13,7 @@
             Detalhe
              </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">do chamado</font></font></small>
         </h4>
-
+        <!-- Progresso utilizando operadores logicos -->
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" @if (@isset($a)) @if ($chamado->status == "Concluido" && $a->status == "Concluido") style="width: 100%;" @endif @if($chamado->status == "Em andamento" && $a->status == "Concluido") style="width: 95%;" @endif @if($chamado->status == "Em andamento" && $a->status == "Em andamento") style="width: 75%;" @endif @endif  @if($chamado->status == "Aberto") style="width: 25%;" @endif @if($chamado->status == "Em andamento") style="width: 50%;" @endif></div>
 

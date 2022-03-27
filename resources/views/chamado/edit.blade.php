@@ -21,14 +21,15 @@
                 Em andamento:
                 </font></font></label>
             </div>
+            <!-- isset — Informa se a variável foi iniciada, só mostra o conteudo de if se existe -->
             <div class="form-check disabled">
                 <label class="form-check-label">
                 <input type="radio" class="form-check-input" name="status" id="optionsRadios3" value="Concluido" @if (!isset($a)) disabled="Concluido" @endif @if (isset($a)) @if($a->status != "Concluido") disabled="Concluido" @endif @endif @if($chamado->status == "Concluido") checked="" @endif><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                 Concluido:
                 </font></font></label>
             </div>
-
-    <button type="submit" class="btn btn-secondary btn-sm mt-4"><i class="fa fa-check"></i>&nbsp; Confirmar @if ($chamado->status == "Concluido" && $a->status == "Concluido") e finalizar @endif</button>
+    <!-- if para alterar o nome do botão no ultimo estágio do chamado -->
+    <button type="submit" class="btn btn-secondary btn-sm mt-4"><i class="fa fa-check"></i>&nbsp; @if ($chamado->status == "Concluido" && $a->status == "Concluido") Finalizar @else Confirmar @endif</button>
     <button type="link" class="btn btn-secondary btn-sm mt-4" onClick="history.go(-1)"><i class="fa fa-level-down fa-rotate-90"></i>&nbsp; Sair</button> <!-- Aqui implementar a função voltar, ou retear para um determinado lugar -->
     <input type="button" class="btn btn-secondary btn-sm mt-4" value="Voltar" onClick="history.go(-1)">
 

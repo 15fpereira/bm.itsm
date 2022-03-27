@@ -30,6 +30,8 @@
 
               <tbody>
                 @foreach ($chamados as $chamado)
+                <!--Determina se a variável existe, caso verdadeiro mostra a tabela abaixo -->
+                @isset($chamado)
                 <tr class="table-active">
                     <th scope="row"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado->id}}</font></font></th>
                     <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{App\Models\User::find($chamado->user_id)->name}}</font></font></td>
@@ -38,7 +40,20 @@
                     <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado->created_at}}</font></font></td>
                     <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a href="{{route('chamados.show',$chamado)}}"><i class="fa fa-level-up" aria-hidden="true"></i></a></font></font></td>
                 </tr>
+                @endisset
                 @endforeach
+                <!-- Determina se a variável é vazia, caso verdadeiro mostra a mensagem abaixo-->
+                @empty($chamado)
+                <tr class="table-active">
+                    <td colspan="6"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font></font>
+                        <h3 class="text-center"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                            Whoops!
+                            </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Não possui nenhum chamado listado.</font></font></small>
+                        </h3>
+                    </td>
+                </tr>
+                @endempty
+
               </tbody>
         </table>
     </div>

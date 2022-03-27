@@ -24,7 +24,7 @@
                     {{csrf_field()}}
                     <div class="form-group">
                         <label class="col-form-label col-form-label-lg" for="inputLarge"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Entra com Observação:</font></font></label>
-                        <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" name="observacao" id="observacao">
+                        <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" name="observacao" id="observacao" required>
 
                     </div>
 

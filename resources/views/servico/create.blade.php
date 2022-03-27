@@ -23,12 +23,12 @@
                     {{csrf_field()}}
                     <div class="form-group">
                         <label class="col-form-label col-form-label-lg" for="inputLarge"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nome do serviço:</font></font></label>
-                        <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" name="nome" id="nome">
+                        <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" name="nome" id="nome" required>
                     </div>
 
                     <div class="form-group">
                         <label class="col-form-label col-form-label-lg" for="inputLarge"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Relato do usuário:</font></font></label>
-                        <textarea class="form-control form-control-lg" type="text" placeholder=".form-control-lg" name="descricao" id="descricao"></textarea>
+                        <textarea class="form-control form-control-lg" type="text" placeholder=".form-control-lg" name="descricao" id="descricao" required></textarea>
                     </div>
 
                     <fieldset class="form-group">
