@@ -11,7 +11,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-circle-user"></i>&nbsp; {{ Auth::user()->name}}</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Perfil</a>
+                        <a class="dropdown-item" href="{{route('perfil.show',Auth::user()->id)}}">Perfil</a>
                         <a class="dropdown-item" href="#">Listar</a>
                          <div class="dropdown-divider"></div>
 

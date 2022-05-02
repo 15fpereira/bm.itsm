@@ -29,12 +29,21 @@
 
             <tbody>
                 @foreach ($chamados as $chamado)
-                <!--Determina se a variável existe, caso verdadeiro mostra a tabela abaixo -->
+                <!--Determina se a variável existe, caso verdadeiro mostra a tabela abaixo. -->
+                <!--Determina condicional para demostra o status com cores na terceira colula da tabela. -->
                 @isset($chamado)
                     <tr class="table-active">
                         <th scope="row"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado->id}}</font></font></th>
                         <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{App\Models\User::find($chamado->user_id)->name}}</font></font></td>
-                        <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado->status}}</font></font></td>
+                        <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><span
+
+                        @if ($chamado->status == 'Em andamento')
+                            class="badge bg-success"
+                        @elseif ($chamado->status == 'Concluido')
+                            class="badge bg-danger"
+                        @else
+                            class="badge bg-warning"
+                        @endif><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado->status}}</font></font></span></font></font></td>
                         <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado->descricao}}</font></font></td>
                         <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado->created_at}}</font></font></td>
                         <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a href="{{route('chamados.show',$chamado)}}"><i class="fa fa-level-up" aria-hidden="true"></i></a></font></font></td>
