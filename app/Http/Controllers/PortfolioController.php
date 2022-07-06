@@ -41,6 +41,11 @@ class PortfolioController extends Controller
     public function store(Request $request)
     {
         //
+        //dd($request->all());
+        Portfolio::create($request->all());
+        return redirect()->route('portfolios.index');
+              // Chamado::create($request->all());
+              // return redirect()->route('painel');
     }
 
     /**

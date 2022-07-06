@@ -56,6 +56,7 @@
                    <!-- Form <input type="hidden" name="_method" value="DELETE"> -->
 
                     <input type="hidden" name="chamado_id" value="{{$chamado->id}}">
+                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                     <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Criar</button>
                 </form>
                 <!-- End Form -->

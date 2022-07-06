@@ -10,9 +10,11 @@
 
         <div class="row mt-4">
             <h3>Portfólio de serviços de TI</h3>
-            <p class="lead"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Deseja criar um novo portfólio?</font></font>
-                <a class="btn btn-link" href="#">Click aqui!</a>
-            </p>
+            @if (Auth::user()->status == 'adm')
+                <p class="lead"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Deseja criar um novo portfólio?</font></font>
+                    @include('portfolio.create')
+                </p>
+            @endif
         </div>
         <div class="row">
             <!-- card -->
@@ -25,7 +27,9 @@
                         <div class="text-center"> <i class="fa fa-envelope-o fa-x5"></i></div>
                         <p class="card-text text-center"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$portfolio->objetivo}}&nbsp;{{$portfolio->descricao}}</font></font></p>
                       <!--  <a href="{{route('servicos.create')}}" class="card-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Novo Serviço </font></font></a> -->
-                        @include('servico.create')
+                        @if (Auth::user()->status == 'adm')
+                            @include('servico.create')
+                        @endif
                         <a href="{{route('portfolios.show',$portfolio)}}" class="card-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Serviços</font></font></a>
                         </div>
                     </div>

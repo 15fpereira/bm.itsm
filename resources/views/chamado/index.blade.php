@@ -19,7 +19,7 @@
               <thead>
                 <tr>
                   <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Número</font></font></th>
-                  <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Responsável</font></font></th>
+                  <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Aberto por:</font></font></th>
                   <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Status</font></font></th>
                   <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Serviço</font></font></th>
                   <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dt de criação</font></font></th>

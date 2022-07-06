@@ -22,6 +22,10 @@ class CreateAgendasTable extends Migration
             $table->foreign('chamado_id')->references('id')->on('chamados')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

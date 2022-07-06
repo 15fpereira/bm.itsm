@@ -19,8 +19,10 @@
             <p>
                 <a href="{{route('portfolios.index')}}" class="btn btn-success"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><i class="fa fa-list"></i>&nbsp; Portfólido de serviços de TI</font></font></a>
                 <a href="/meuschamados" class="btn btn-primary"><i class="fa fa-list"></i>&nbsp; Meus chamados</a>
-
-                <a href="{{route('chamados.index')}}" class="btn btn-secondary"><i class="fa fa-list"></i>&nbsp; Todos os chamados</a>
+                <!-- Somente administrador -->
+                @if (Auth::user()->status == 'adm')
+                    <a href="{{route('chamados.index')}}" class="btn btn-secondary"><i class="fa fa-list"></i>&nbsp; Todos os chamados</a>
+                @endif
 
             </p>
         </div>

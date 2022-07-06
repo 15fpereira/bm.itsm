@@ -4,6 +4,7 @@
 @endsection
 @section('content')
 <!-- Laço de repetição para pegar o ultimos loop do relacionamento caso aja mais de um -->
+<!-- Loop Mostra o Ultimo tecnico que agendou -->
 @foreach ($chamado::find($chamado->id)->agendas as $a)
 
 @endforeach
@@ -38,13 +39,17 @@
       <div class="col">
 
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Responsável:
+            <li class="list-group-item">Aberto por:
                 </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{App\Models\User::find($chamado->user_id)->name}}</font></font></small>
 
             </li>
-            <li class="list-group-item">Situação:
-                </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado->status}}</font></font></small>
-
+            <li class="list-group-item"> Reponsável:
+                @isset($a)
+                    </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{App\Models\User::find($a->user_id)->name}}</font></font></small>
+                @endisset
+                @empty($a)
+                    </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Não definido</font></font></small>
+                @endempty
             </li>
         </ul>
 
