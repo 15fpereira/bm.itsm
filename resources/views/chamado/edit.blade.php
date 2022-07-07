@@ -11,21 +11,21 @@
             <legend class="mt-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Status do chamado:</font></font></legend>
             <div class="form-check form-check-inline">
                 <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="status" id="optionsRadios1" value="Aberto" @if($chamado->status == "Aberto") checked="" @endif><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                Aberto:
+                <input type="radio" class="form-check-input" name="status" id="optionsRadios1" value="Atendimento In loco" @if($chamado->status == "Atendimento In loco") checked="" @endif><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                Atendimento In loco:
                 </font></font></label>
             </div>
             <div class="form-check form-check-inline">
                 <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="status" id="optionsRadios2" value="Em andamento" @if($chamado->status == "Em andamento") checked="" @endif><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                Em andamento:
+                <input type="radio" class="form-check-input" name="status" id="optionsRadios2" value=" Atendimento remoto" @if($chamado->status == " Atendimento remoto") checked="" @endif><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                Atendimento remoto:
                 </font></font></label>
             </div>
             <!-- isset — Informa se a variável foi iniciada, só mostra o conteudo de if se existe -->
             <div class="form-check disabled">
                 <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="status" id="optionsRadios3" value="Concluido" @if (!isset($a)) disabled="Concluido" @endif @if (isset($a)) @if($a->status != "Concluido") disabled="Concluido" @endif @endif @if($chamado->status == "Concluido") checked="" @endif><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                Concluido:
+                <input type="radio" class="form-check-input" name="status" id="optionsRadios3" value="Cancelado" @if (!isset($a)) disabled="Cancelado" @endif @if (isset($a)) @if($a->status != "Cancelado") disabled="Cancelado" @endif @endif @if($chamado->status == "Cancelado") checked="" @endif><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                Cancelado:
                 </font></font></label>
             </div>
     <!-- if para alterar o nome do botão no ultimo estágio do chamado -->
