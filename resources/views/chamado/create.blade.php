@@ -53,7 +53,6 @@
 
                    <!-- Form <input type="hidden" name="_method" value="DELETE"> -->
 
-
                     <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                     <input type="hidden" name="servico_id" value="{{$port->id}}">
                     <button type="submit" class="btn btn-primary">Criar</button>

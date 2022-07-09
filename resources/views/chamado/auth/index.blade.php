@@ -37,12 +37,12 @@
                         <!-- loop aninhado para pegar o valor da chave estrangeira referente ao usuário -->
                         <!-- Como verificar se o array está vazio no Blade? fonte: https://www.itsolutionstuff.com/post/laravel-how-to-check-if-array-is-empty-in-bladeexample.html -->
                         @forelse ($chamado->agendas as $agenda)
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{App\Models\User::find($agenda->user_id)->name}}</font></font></td>
+
                         @empty
                             <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Não foi definido</font></font></td>
 
                         @endforelse
-
+                        <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{App\Models\User::find($agenda->user_id)->name}}</font></font></td>
                         <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><span
 
                         @if ($chamado->status == 'Em andamento')

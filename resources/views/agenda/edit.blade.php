@@ -28,6 +28,9 @@
                     <fieldset @if($chamado->status == "Concluido" or Auth::user()->status == 'padrao') disabled="" @endif>
                         <label for="exampleTextarea" class="form-label mt-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Observação:</font></font></label>
                         <textarea class="form-control" id="observacao" name="observacao" value="{{$agenda->observacao}}" placeholder="{{$agenda->observacao}}" rows="3">{{$agenda->observacao}}</textarea>
+                        @if (Auth::user()->status != 'adm')
+                            <small id="emailHelp" class="form-text text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Desculpe, mas você não tem permissão para alterar essa informação.</font></font></small>
+                        @endif
                     </fieldset>
                     </div>
                 </div>
@@ -36,6 +39,10 @@
                     <fieldset @if($chamado->status == "Concluido" or Auth::user()->status == 'padrao') disabled="" @endif>
                         <label for="exampleTextarea" class="form-label mt-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Descrição:</font></font></label>
                         <textarea class="form-control" id="descricao" name="descricao" value="{{$agenda->descricao}}" placeholder="{{$agenda->descricao}}" rows="3">{{$agenda->descricao}}</textarea>
+                        @if (Auth::user()->status != 'adm')
+                            <small id="emailHelp" class="form-text text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Desculpe, mas você não tem permissão para alterar essa informação.</font></font></small>
+                        @endif
+
                     <fieldset>
                     </div>
                 </div>
@@ -65,6 +72,9 @@
                     </font></font></label>
                 </div>
                 <fieldset>
+                @if (Auth::user()->status != 'adm')
+                    <small id="emailHelp" class="form-text text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Desculpe, mas você não tem permissão para alterar essa informação.</font></font></small>
+                @endif
             <!-- End Radios -->
         </div>
         <div class="modal-footer">
