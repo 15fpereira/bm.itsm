@@ -30,7 +30,7 @@
             </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{count($chamado->agendas)}}</font></font></small>
             </li>
             <li class="list-group-item">Situação:
-            </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado->status}}</font></font></small>
+            </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado->status}} - @isset($a) {{ $a->status }} @endisset @empty($a) Não definido @endempty</font></font></small>
 
             </li>
         </ul>
