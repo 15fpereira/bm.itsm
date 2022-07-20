@@ -28,7 +28,7 @@
             </thead>
 
             <tbody>
-                @foreach ($chamados as $chamado)
+            @foreach ($chamados as $chamado)
                 <!--Determina se a variável existe, caso verdadeiro mostra a tabela abaixo. -->
                 <!--Determina condicional para demostra o status com cores na terceira colula da tabela. -->
                 @isset($chamado)
@@ -37,17 +37,16 @@
                         <!-- loop aninhado para pegar o valor da chave estrangeira referente ao usuário -->
                         <!-- Como verificar se o array está vazio no Blade? fonte: https://www.itsolutionstuff.com/post/laravel-how-to-check-if-array-is-empty-in-bladeexample.html -->
                         @forelse ($chamado->agendas as $agenda)
-
+                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{App\Models\User::find($agenda->user_id)->name}}</font></font></td>
                         @empty
                             <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Não foi definido</font></font></td>
-
                         @endforelse
-                        <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{App\Models\User::find($agenda->user_id)->name}}</font></font></td>
+
                         <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><span
 
-                        @if ($chamado->status == 'Em andamento')
+                        @if ($chamado->status == 'Aberto')
                             class="badge bg-success"
-                        @elseif ($chamado->status == 'Concluido')
+                        @elseif ($chamado->status == 'Fechado')
                             class="badge bg-danger"
                         @else
                             class="badge bg-warning"
@@ -57,7 +56,7 @@
                         <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a href="{{route('chamados.show',$chamado)}}"><i class="fa fa-level-up" aria-hidden="true"></i></a></font></font></td>
                     </tr>
                 @endisset
-                @endforeach
+            @endforeach
                 <!-- Determina se a variável é vazia, caso verdadeiro mostra a mensagem abaixo-->
                 @empty($chamado)
                 <tr class="table-active">

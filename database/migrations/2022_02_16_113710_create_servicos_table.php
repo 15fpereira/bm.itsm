@@ -17,7 +17,7 @@ class CreateServicosTable extends Migration
             $table->id();
             $table->string('nome');
             $table->string('descricao');
-            $table->string('status');
+            $table->time('sla', $precision = 0);
             $table->unsignedBigInteger('portfolio_id');
             $table->foreign('portfolio_id')->references('id')->on('portfolios')
                 ->onUpdate('cascade')

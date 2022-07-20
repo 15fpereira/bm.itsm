@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Chamado;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ChamadoController extends Controller
 {
@@ -21,8 +22,9 @@ class ChamadoController extends Controller
     public function index()
     {
         //
-        $chamados = Chamado::all();
-        return view('chamado.index', compact('chamados'));
+       $chamados = Chamado::where('status', 'Aberto')->get();
+       return view('chamado.index', compact('chamados'));
+
     }
 
     /**
@@ -32,7 +34,7 @@ class ChamadoController extends Controller
      */
     public function create()
     {
-        //
+        // Utilizando modal
     }
 
     /**
@@ -83,11 +85,12 @@ class ChamadoController extends Controller
     public function update(Request $request, Chamado $chamado)
     {
         //
-       // dd($request->all());
+        //dd($request->all());
 
        // $contato = Contato::find($id);
        //dd($chamado);
         $chamado->descricao = $request->descricao;
+        $chamado->tipo = $request->tipo;
         $chamado->status = $request->status;
         $chamado->save();
 
@@ -100,7 +103,7 @@ class ChamadoController extends Controller
         {
             dd($chmd);
         };
-        if($chamado->status == "Concluido" )
+        if($chamado->status == "Fechado" )
         {
             return redirect()->route('chamados.index');
         }else

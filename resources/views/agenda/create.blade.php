@@ -5,8 +5,8 @@
  -->
 
 
-         <!-- Button trigger modal -->
-        <button type="button" @if($chamado->status == "Concluido" or Auth::user()->status == 'padrao') class="btn btn-secondary disabled btn-sm" @endif @if($chamado->status != "Concluido") class="btn btn-secondary btn-sm" @endif data-toggle="modal" data-target="#exampleModal1"><i class="fa fa-plus"></i>&nbsp; Criar</button>
+<!-- Button trigger modal -->
+<button type="button" @if($chamado->status == "Concluido" or Auth::user()->status == 'padrao') class="btn btn-secondary disabled btn-sm" @endif @if($chamado->status != "Concluido") class="btn btn-secondary btn-sm" @endif data-toggle="modal" data-target="#exampleModal1"><i class="fa fa-plus"></i>&nbsp; Agendar nova tarefa</button>
 
 
 <!-- Modal -->
@@ -14,7 +14,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                Deseja criar um novo agendamento?
+                Deseja agendar uma nova tarefa?
                 <h5 class="modal-title" id="exampleModalLabel1"> <i class="fas fa-exclamation-triangle"></i> </h5>
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -23,7 +23,7 @@
                 <form method="post" action="{{route('agendas.store')}}" class="form-horizontal">
                     {{csrf_field()}}
                     <div class="form-group">
-                        <label class="col-form-label col-form-label-lg" for="inputLarge"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Entra com Observação:</font></font></label>
+                        <label class="col-form-label col-form-label-lg" for="inputLarge"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Entra com observação:</font></font></label>
                         <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" name="observacao" id="observacao" required>
 
                     </div>
@@ -51,13 +51,13 @@
                     </fieldset>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
 
                    <!-- Form <input type="hidden" name="_method" value="DELETE"> -->
 
                     <input type="hidden" name="chamado_id" value="{{$chamado->id}}">
                     <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-                    <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Criar</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Sim</button>
                 </form>
                 <!-- End Form -->
             </div>

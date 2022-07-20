@@ -16,7 +16,7 @@
         </h4>
         <!-- Progresso utilizando operadores logicos -->
         <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" @if (@isset($a)) @if ($chamado->status == "Concluido" && $a->status == "Concluido") style="width: 100%;" @endif @if($chamado->status == "Em andamento" && $a->status == "Concluido") style="width: 95%;" @endif @if($chamado->status == "Em andamento" && $a->status == "Em andamento") style="width: 75%;" @endif @endif  @if($chamado->status == "Aberto") style="width: 25%;" @endif @if($chamado->status == "Em andamento") style="width: 50%;" @endif></div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" @if (@isset($a)) @if ($a->status == "Concluido") style="width: 100%;" @endif @if($a->status == "Concluido") style="width: 95%;" @endif @if($a->status == "Em andamento") style="width: 75%;" @endif @if($a->status == "Agendado") style="width: 50%;" @endif @endif  @if($chamado->status == "Atendimento In loco" or $chamado->status == "Atendimento remoto")  style="width: 25%;" @endif></div>
 
         </div>
 
@@ -30,7 +30,7 @@
             </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{count($chamado->agendas)}}</font></font></small>
             </li>
             <li class="list-group-item">Situação:
-            </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado->status}} - @isset($a) {{ $a->status }} @endisset @empty($a) Não definido @endempty</font></font></small>
+            </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$chamado->tipo}} - @isset($a) {{ $a->status }} @endisset @empty($a) Não definido @endempty</font></font></small>
 
             </li>
         </ul>
@@ -75,25 +75,22 @@
         @include('chamado.edit')
     </div>
       <div class="col mt-4">
-        <h5>Agenda do chamado:</h5>
+        <h5>Tarefas Agendas:</h5>
 
         <table class="table table-hover">
               <thead>
                 <tr>
-
                   <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Abertura</font></font></th>
                   <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Atualização</font></font></th>
                   <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Status</font></font></th>
                 </tr>
               </thead>
-
               <tbody>
-
                 @foreach ($chamado::find($chamado->id)->agendas as $agenda)
                     @include('agenda.edit')
                 @endforeach
               </tbody>
-            </table>
+        </table>
 
         @include('agenda.create')
 

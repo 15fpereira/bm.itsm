@@ -31,27 +31,11 @@
                         <textarea class="form-control form-control-lg" type="text" placeholder=".form-control-lg" name="descricao" id="descricao" required></textarea>
                     </div>
 
-                    <fieldset class="form-group">
-                        <legend class="mt-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Status da agenda:</font></font></legend>
-                        <div class="form-check form-check-inline">
-                            <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="status" id="optionsRadios1" value="Aberto" checked="" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                            Aberto:
-                            </font></font></label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="status" id="optionsRadios2" value="Em andamento" checked="" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                            Em andamento:
-                            </font></font></label>
-                        </div>
-                        <div class="form-check disabled">
-                            <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="status" id="optionsRadios3" value="" disabled="Concluido"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                            Concluido:
-                            </font></font></label>
-                        </div>
-                    </fieldset>
+                    <div class="form-group">
+                        <label class="col-form-label col-form-label-lg" for="inputLarge"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sla:</font></font></label>
+                        <input class="form-control form-control-lg" type="time" placeholder=".form-control-lg" name="sla" id="sla" required></textarea>
+                    </div>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

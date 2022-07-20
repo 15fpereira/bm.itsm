@@ -30,19 +30,19 @@
                         <legend class="mt-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tipo de chamado:</font></font></legend>
                         <div class="form-check form-check-inline">
                             <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="status" id="optionsRadios1" value="In loco" checked="" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                            <input type="radio" class="form-check-input" name="tipo" id="optionsRadios1" value="In loco" checked="" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                             Atendimento In loco:
                             </font></font></label>
                         </div>
                         <div class="form-check form-check-inline">
                             <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="status" id="optionsRadios2" value="Atendimento remoto" checked="" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                            <input type="radio" class="form-check-input" name="tipo" id="optionsRadios2" value="Atendimento remoto" checked="" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                             Atendimento remoto:
                             </font></font></label>
                         </div>
                         <div class="form-check disabled">
                             <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="status" id="optionsRadios3" value="" disabled="Cancelado"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                            <input type="radio" class="form-check-input" name="tipo" id="optionsRadios3" value="" disabled="Cancelado"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                             Cancelado:
                             </font></font></label>
                         </div>
@@ -52,7 +52,7 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 
                    <!-- Form <input type="hidden" name="_method" value="DELETE"> -->
-
+                    <input type="hidden" name="status" value="Aberto">
                     <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                     <input type="hidden" name="servico_id" value="{{$port->id}}">
                     <button type="submit" class="btn btn-primary">Criar</button>

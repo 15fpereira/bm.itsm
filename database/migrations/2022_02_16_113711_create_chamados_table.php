@@ -16,6 +16,7 @@ class CreateChamadosTable extends Migration
         Schema::create('chamados', function (Blueprint $table) {
             $table->id();
             $table->string('descricao');
+            $table->string('tipo');
             $table->string('status');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')
