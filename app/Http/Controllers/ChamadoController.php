@@ -22,7 +22,7 @@ class ChamadoController extends Controller
     public function index()
     {
         //
-       $chamados = Chamado::where('status', 'Aberto')->get();
+       $chamados = Chamado::where('status', 'Aberto')->orderBy('id', 'desc')->get();
        return view('chamado.index', compact('chamados'));
 
     }
