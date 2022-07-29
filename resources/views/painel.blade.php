@@ -6,6 +6,17 @@
 <section class="jumbotron text-center mt-4">
 
     <div class="container">
+
+        <div class="row mt-4">
+            @if(Session::has('flash_message'))
+                <div class="alert alert-dismissible alert-success">
+                    <button type="button" class="btn-close" data-dismiss="alert"></button>
+                    <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Messagem de confirmação! </font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{Session::get('flash_message')}}</font></font><a href="/meuschamados" class="alert-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Acessar meus chamdos?</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                        </font></font>
+                </div>
+            @endif
+        </div>
+
         <div class="row mt-4">
             <i class="fa fa-desktop fa-8x mt-4" aria-hidden="true"></i>&nbsp;
             <h1><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">

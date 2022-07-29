@@ -11,7 +11,10 @@ class Portfolio extends Model
         // chave estrageira padrão: _id
         // O Eloquent tentará encontrar uma classe "Chamado", modelo que tenha um id que corresponda à chamado_id coluna do Commentmodelo.
         // status terá três valores agendado, em andamento e concluido.
-        'tipo', 'objetivo', 'descricao', 'status'
+        'tipo',
+        'objetivo',
+        'descricao',
+        'status'
 
     ];
     use HasFactory;

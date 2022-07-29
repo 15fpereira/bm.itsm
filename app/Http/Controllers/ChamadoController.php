@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Chamado;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 
 class ChamadoController extends Controller
@@ -22,7 +23,7 @@ class ChamadoController extends Controller
     public function index()
     {
         //
-       $chamados = Chamado::where('status', 'Aberto')->orderBy('id', 'desc')->get();
+       $chamados = Chamado::where('status', 'Aberto')->orderBy('id', 'desc')->simplePaginate(4);
        return view('chamado.index', compact('chamados'));
 
     }
@@ -48,6 +49,7 @@ class ChamadoController extends Controller
         //
        // dd($request->all());
         Chamado::create($request->all());
+        Session::flash('flash_message', 'Novo chamado criado com sucesso! '); //messagem de sucesso!
         return redirect()->route('painel');
 
     }
@@ -98,16 +100,18 @@ class ChamadoController extends Controller
       //  $contato->telefone = $request->telefone;
       //  $contato->email = $request->email;
       //  $contato->save();
-     //   Session::flash('flash_message', 'Contatos Atualizado com sucesso!');
         foreach($chamado->servicos() as $chmd)
         {
             dd($chmd);
         };
         if($chamado->status == "Fechado" )
         {
+            Session::flash('flash_message', 'Chamado '. $chamado->status .' com sucesso! '); //messagem de sucesso!
             return redirect()->route('chamados.index');
+
         }else
         {
+            Session::flash('flash_message', 'Dados alterado com sucesso! '); //messagem de sucesso!
             return redirect()->route('chamados.show',[$chamado]);
         }
 

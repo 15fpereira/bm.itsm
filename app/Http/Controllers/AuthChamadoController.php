@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\Controller;
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\Models\Chamado;
 use Illuminate\Support\Facades\Auth;
 

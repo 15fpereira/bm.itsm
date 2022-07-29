@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Agenda;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AgendaController extends Controller
 {
@@ -39,7 +40,7 @@ class AgendaController extends Controller
         //
        //dd($request->all());
         Agenda::create($request->all());
-        // Session::flash('flash_message', 'Contato criado com sucesso! '); //messagem de sucesso!
+        Session::flash('flash_message', 'Nova tarefa agendada com sucesso! '); //messagem de sucesso!
         return redirect()->route('chamados.show',$request->chamado_id);
     }
 
@@ -81,6 +82,7 @@ class AgendaController extends Controller
         $agenda->descricao = $request->descricao;
         $agenda->status = $request->status;
         $agenda->save();
+        Session::flash('flash_message', 'Tarefa agendada altera com sucesso! '); //messagem de sucesso!
         return redirect()->route('chamados.show',[$agenda->chamado_id]);
     }
 

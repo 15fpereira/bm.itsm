@@ -1,6 +1,6 @@
 @extends('layouts.apps')
 @section('title')
-    Chamado: Deashboard
+    Deashboard
 @endsection
 @section('content')
 <div class="container">
@@ -172,8 +172,5 @@
     </div>
 
 </div>
-
-  </div>
-
-
+</div>
 @endsection
