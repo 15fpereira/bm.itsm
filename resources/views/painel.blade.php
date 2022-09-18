@@ -4,9 +4,7 @@
 @endsection
 @section('content')
 <section class="jumbotron text-center mt-4">
-
     <div class="container">
-
         <div class="row mt-4">
             @if(Session::has('flash_message'))
                 <div class="alert alert-dismissible alert-success">
@@ -23,20 +21,10 @@
                 {{__('bm.')}}
                 </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{__('itsm')}}</font></font></small>
             </h1>
-
-
             <p class="lead text-muted"> {{__('Hello!' )}} Seja bem vindo ao {{__('Dashboard')}} do sistema: Bm.itsm {{Auth::user()->name}}</p>
-
             <p>
-                <a href="{{route('portfolios.index')}}" class="btn btn-success"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><i class="fa fa-list"></i>&nbsp; Portfólido de serviços de TI</font></font></a>
-                <!-- Somente usuário padrao -->
-                @if (Auth::user()->status != 'adm')
-                    <a href="/meuschamados" class="btn btn-primary"><i class="fa fa-list"></i>&nbsp; Meus chamados</a>
-                @endif
-                <!-- Somente administrador -->
-                @if (Auth::user()->status == 'adm')
-                    <a href="{{route('chamados.index')}}" class="btn btn-secondary"><i class="fa fa-list"></i>&nbsp; Todos os chamados</a>
-                @endif
+                <!-- Butoes: Novo chamados, Portfolio de serviço de TI e lista de chamados -->
+                @include('chamado.auth.create')
 
             </p>
         </div>
@@ -48,14 +36,13 @@
         </div>
         <div class="row mt-4">
             <div class="col-xs-6 col-md-4">
-                <div class="card text-center fa-4x">
+                <div class="card text-center">
                     <div class="card-body">
-                       <i class="fa fa-cogs"></i>
+                       <i class="fa fa-cogs fa-4x"></i>
                       <h4 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Configurações</font></font></h4>
                       <h6 class="card-subtitle mb-2 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Legenda do cartão</font></font></h6>
                     </div>
                   </div>
-
             </div>
             <div class="col-xs-6 col-md-4">
                 <div class="card text-center">
@@ -76,12 +63,7 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
-
     </div>
-
-
 </section>
 @endsection

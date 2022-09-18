@@ -27,8 +27,7 @@
         </h4>
         <!-- Progresso utilizando operadores logicos -->
         <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" @if (@isset($a)) @if ($a->status == "Concluido") style="width: 100%;" @endif @if($a->status == "Concluido") style="width: 95%;" @endif @if($a->status == "Em andamento") style="width: 75%;" @endif @if($a->status == "Agendado") style="width: 50%;" @endif @endif  @if($chamado->status == "Atendimento In loco" or $chamado->status == "Atendimento remoto")  style="width: 25%;" @endif></div>
-
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" @if (@isset($a)) @if ($a->status == "Concluido") style="width: 100%;" @endif @if($a->status == "Concluido") style="width: 95%;" @endif @if($a->status == "Em andamento") style="width: 75%;" @endif @if($a->status == "Agendado") style="width: 50%;" @endif @endif  @if($chamado->status == "In loco" or $chamado->status == "Atendimento remoto")  style="width: 25%;" @endif></div>
         </div>
 
       <div class="col">

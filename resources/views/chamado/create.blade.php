@@ -5,8 +5,8 @@
  -->
 
 
-         <!-- Button trigger modal -->
-         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#ModalChamadoCreate"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Criar chamado</font></font></button>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#ModalChamadoCreate"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Criar chamado</font></font></button>
 
 <!-- Modal -->
 <div class="modal fade" id="ModalChamadoCreate" tabindex="-1" aria-labelledby="exModalLabel" aria-hidden="true">

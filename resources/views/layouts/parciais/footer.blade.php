@@ -1,51 +1,53 @@
 <footer class="text-muted">
-
     <div class="container">
-
         <div class="row mt-4">
+
+            <div class="row mt-4">
+                <h4 class="text-center"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                    Nossas
+                    </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Soluções:</font></font></small>
+                </h4>
+            </div>
+            <hr/>  <!-- linha horizontal -->
             <div class="col-xs-6 col-md-4">
                 <p class="float-right">
-
-                <figure class="text-center">
-                    <blockquote class="blockquote">
-                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-
-                    </blockquote>
-                    <figcaption class="blockquote-footer">
-                        Someone famous in <cite title="Source Title">Source Title</cite>
-                    </figcaption>
-                </figure>
-
+                    <figure class="text-center">
+                        <i class="fa fa-shield fa-2x"></i>
+                        <blockquote class="blockquote">
+                            <p class="mb-2">Aumetar a segurança do ambiente</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            Confiar no ambiente é primordial. <cite title="Source Title">Utilize tecnologia para deixar o seu ambiente complexo mais seguros.</cite>
+                        </figcaption>
+                    </figure>
                 </p>
             </div>
             <div class="col-xs-6 col-md-4">
                 <p class="float-right">
+                    <figure class="text-center">
+                        <i class="fa fa-calendar-times-o fa-2x"></i>
+                        <blockquote class="blockquote">
+                            <p class="mb-0">Diminuir o tempo de atendimento.</p>
 
-                <figure class="text-center">
-                    <blockquote class="blockquote">
-                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-
-                    </blockquote>
-                    <figcaption class="blockquote-footer">
-                        Someone famous in <cite title="Source Title">Source Title</cite>
-                    </figcaption>
-                </figure>
-
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            Atender chamado de forma rápida e objetiva. <cite title="Source Title">Para cliente de contrato e outros públicos.</cite>
+                        </figcaption>
+                    </figure>
                 </p>
             </div>
             <div class="col-xs-6 col-md-4">
                 <p class="float-right">
+                    <figure class="text-center">
 
-                <figure class="text-center">
-                    <blockquote class="blockquote">
-                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-
-                    </blockquote>
-                    <figcaption class="blockquote-footer">
-                        Someone famous in <cite title="Source Title">Source Title</cite>
-                    </figcaption>
-                </figure>
-
+                        <i class="fa fa-volume-control-phone fa-2x"></i>
+                        <blockquote class="blockquote">
+                            <p class="mb-0">Melhora o atendimento ao usuário.</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            Atender o usuário final e o nosso diferencial. <cite title="Source Title">Fator critico do sucesso de uma empresa.</cite>
+                        </figcaption>
+                    </figure>
                 </p>
             </div>
         </div>

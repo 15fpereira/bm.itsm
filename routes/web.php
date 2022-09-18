@@ -25,7 +25,7 @@ Route::get('/', function () {
 
 
 //Route::get('/meuschamados', [UserController::class, 'index']);
-Route::get('/meuschamados', [AuthChamadoController::class, 'index']);
+Route::resource('meuschamados', AuthChamadoController::class);
 
 // resource sem "s"
 Route::resource('perfil', PerfilController::class);
@@ -49,3 +49,5 @@ Route::get('/painel', function () {
 })->middleware(['auth'])->name('painel');
 
 require __DIR__.'/auth.php';
+// roteamento do select dinâmico
+Route::get('selects/{id}/servico','App\Http\Controllers\AuthChamadoController@getselect');

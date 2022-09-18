@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Chamado;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Servico;
 
 class AuthChamadoController extends Controller
 {
@@ -21,4 +24,26 @@ class AuthChamadoController extends Controller
         return view('chamado.auth.index', compact('chamados'));
     }
 
+    public function create()
+    {
+        // Utilizando modal
+    }
+
+    public function store(Request $request)
+    {
+        //
+        //dd($request->all())
+        Chamado::create($request->all());
+        Session::flash('flash_message', 'Novo chamado criado com sucesso! '); //messagem de sucesso!
+        return redirect()->route('painel');
+
+
+    }
+
+    public function getselect($id)
+    {
+
+        return Servico::where('portfolio_id', $id)->get();
+
+    }
 }

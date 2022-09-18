@@ -28,4 +28,8 @@ class Servico extends Model
         //return $this->belongsTo(Chamado::class);
         return $this->hasMany(Chamado::class);
     }
+    public static function select($id)
+    {
+        return Servico::where('portfolio_id', '=', $id)->get();
+    }
 }

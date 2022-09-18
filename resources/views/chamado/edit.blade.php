@@ -11,7 +11,7 @@
             <legend class="mt-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Status do chamado:</font></font></legend>
             <div class="form-check form-check-inline">
                 <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="tipo" id="optionsRadios1" value="Atendimento In loco" @if($chamado->tipo == "Atendimento In loco") checked="" @endif><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                <input type="radio" class="form-check-input" name="tipo" id="optionsRadios1" value="In loco" @if($chamado->tipo == "In loco") checked="" @endif><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                 Atendimento In loco:
                 </font></font></label>
             </div>
