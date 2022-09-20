@@ -12,71 +12,112 @@
   </div>
   <!-- Content Row -->
   <div class="row">
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                            Chamados Aberto (Total)</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{App\Models\Chamado::count()}}</div>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-success shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                            Chamados (meus atendimentos)</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{App\Models\Agenda::where('user_id',Auth::user()->id)->count()}}</div>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fa fa-handshake-o fa-2x text-gray-300"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-info shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+        @if (Auth::user()->status == "padrao")
+             <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Meus chanados (Total)</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{App\Models\Chamado::where('user_id',Auth::user()->id)->count()}}</div>
                         </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+
+        @if (Auth::user()->status == "adm")
+             <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
                         <div class="row no-gutters align-items-center">
-                            <div class="col-auto">
-                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                    <!-- Mostra a porcentagem de chamados em atendimento referente a quantidade de chamados aberto -->
-                                    {{(App\Models\Agenda::where('user_id',Auth::user()->id)->count() * 100)/(App\Models\Chamado::count())}}%
-                                </div>
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                    Chamados Aberto (Total)</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{App\Models\Chamado::count()}}</div>
                             </div>
-                            <div class="col">
-                                <div class="progress progress-sm mr-2">
-                                    <div class="progress-bar bg-info" role="progressbar"
-                                        style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
+                            <div class="col-auto">
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
-                    <div class="col-auto">
-                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                    Chamados (minha fila - pedendete)</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{App\Models\Agenda::where('user_id',Auth::user()->id)->where('status', 'Em andamento')->count()}}</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fa fa-handshake-o fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Chamados (pedendete de atendimento)</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{App\Models\Chamado::where('user_id',Auth::user()->id)->agendas()->get()->count()}}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fa fa-handshake-o fa-2x text-gray-300"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                            </div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                        <!-- Mostra a porcentagem de chamados em atendimento referente a quantidade de chamados aberto -->
+                                        {{(App\Models\Agenda::where('user_id',Auth::user()->id)->count() * 100)/(App\Models\Chamado::count())}}%
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="progress progress-sm mr-2">
+                                        <div class="progress-bar bg-info" role="progressbar"
+                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                            aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     <!-- Pending Requests Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-warning shadow h-100 py-2">
