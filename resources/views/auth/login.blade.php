@@ -37,8 +37,8 @@
 
                             <div class="form-group">
                                 <i class="fa fa-envelope"></i>
-                                <label for="email" class="form-label mt-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><i class="fa-solid fa-envelopes"></i>&nbsp; Endereço de e-mail</font></font></label>
-                                <input type="email" class="form-control" id="email" name="email" :value="old('email')" aria-describedby="emailHelp" placeholder="Digite o e-mail" required autofocus>
+                                <label for="username" class="form-label mt-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><i class="fa-solid fa-envelopes"></i>&nbsp; username</font></font></label>
+                                <input type="text" class="form-control" id="username" name="username" :value="old('username')" aria-describedby="emailHelp" placeholder="Digite o username" required autofocus>
                                 <small id="emailHelp" class="form-text text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nunca compartilharemos seu e-mail com mais ninguém.</font></font></small>
                             </div>
 

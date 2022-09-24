@@ -78,7 +78,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Chamados (pedendete de atendimento)</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{App\Models\Chamado::where('user_id',Auth::user()->id)->agendas()->get()->count()}}</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{App\Models\Chamado::where('user_id',Auth::user()->id)->get()->count()}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fa fa-handshake-o fa-2x text-gray-300"></i>

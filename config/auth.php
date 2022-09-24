@@ -38,7 +38,7 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'ldap',
         ],
     ],
 
@@ -60,9 +60,24 @@ return [
     */
 
     'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+    //    'users' => [
+    //        'driver' => 'eloquent',
+    //        'model' => App\Models\User::class,
+    //    ],
+        'ldap' => [
+            'driver' => 'ldap',
+            'model' => LdapRecord\Models\OpenLDAP\User::class,
+            'rules' => [],
+            'database' => [
+                'model' => App\Models\User::class,
+                'sync_passwords' => 'password',
+                'sync_attributes' => [
+                    'name' => 'cn',
+                  //  'email' => 'uid',
+                    'status' => false,
+                    'username' => 'uid',
+                ],
+            ],
         ],
 
         // 'users' => [

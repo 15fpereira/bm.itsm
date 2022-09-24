@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
-
+// Solicitação de login
 class LoginRequest extends FormRequest
 {
     /**
@@ -29,8 +29,10 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => ['required', 'string', 'email'],
-            'password' => ['required', 'string'],
+          //  'username' => ['required', 'string', 'username'],
+          //  'password' => ['required', 'string'],
+            'username' => 'required|string',
+            'password' => 'required|string',
         ];
     }
 
@@ -45,14 +47,29 @@ class LoginRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
-        if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
+        $credentials = [
+            //'mail' => $this->email,
+            //'password' => $this->password,
+            'uid' => $this->username,
+            'password' => $this->password,
+        ];
+
+        if (! Auth::attempt($credentials, $this->filled('remember'))) {
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
-                'email' => trans('auth.failed'),
+                'email' => __('auth.failed'),
             ]);
         }
+/**
+*        if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
+*            RateLimiter::hit($this->throttleKey());
 
+*            throw ValidationException::withMessages([
+*                'email' => trans('auth.failed'),
+*            ]);
+*        }
+*/
         RateLimiter::clear($this->throttleKey());
     }
 
