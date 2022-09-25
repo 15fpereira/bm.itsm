@@ -67,16 +67,19 @@ return [
         'ldap' => [
             'driver' => 'ldap',
             'model' => LdapRecord\Models\OpenLDAP\User::class,
-            'rules' => [],
+            'rules' => [
+                App\Ldap\Rules\OnlyHelpDeskUsers::class // <-- Added here.
+            ],
             'database' => [
                 'model' => App\Models\User::class,
-                'sync_passwords' => 'password',
+                'sync_passwords' => 'password', // sincroniza a senha
                 'sync_attributes' => [
                     'name' => 'cn',
                   //  'email' => 'uid',
-                    'status' => false,
+                   // 'status' => false,
                     'username' => 'uid',
-                ],
+                ], // sincrozina atributos
+                'status' => false, // fora da chave ou array para não sincronizar
             ],
         ],
 
